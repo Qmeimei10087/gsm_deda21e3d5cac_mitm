@@ -38,6 +38,14 @@ config.json          --      服务器端口配置
 OpenBTS的端口可以有多个，需要不同的rhost和lhost以应对多设备,mobile端口仅需一个
 
 # 使用
+## 运行osmotrx
+```javascript
+uhd_usrp_probe
+cd osmo-trx/doc/examples/osmo-trx-uhd
+osmo-trx-uhd -C osmo-trx-usrp_b200.cfg -f
+```
+
+
 
 
 
