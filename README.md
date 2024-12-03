@@ -57,12 +57,19 @@ osmo-trx-uhd -C osmo-trx-usrp_b200.cfg -f
 ```
 ## 运行OpenBTS
 ```javascript
-cd OpenBTS
+cd bin/OpenBTS
 ./sipauthserse
 ./OpenBTS
 ```
 ## 运行mobile
 ```javascript
+cd bin/mobile
+./osmocon -m c123xor -p /dev/ttyUSB0 -c layer1.highram.bin
+#利用cell_log搜索出附近最强的arfcn
+#修改default.cfg
+#将imsi改为吸附到openbts里的imsi
+#添加 stick [arfcn]
+./mobile -c default.cfg
 ```
 
 
