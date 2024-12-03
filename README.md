@@ -38,12 +38,34 @@ config.json          --      服务器端口配置
 OpenBTS的端口可以有多个，需要不同的rhost和lhost以应对多设备,mobile端口仅需一个
 
 # 使用
+## 运行服务器脚本
+```javascript
+#在服务器上
+python3 main_server.py
+
+#在OpenBTS所在设备上
+python3 OpenBTS_relay_server [服务器IP] [配置的OpenBTS端口]
+
+#在C118所在设备上
+python3 mobile_relay_server [服务器IP] [配置的mobile端口]
+```
 ## 运行osmotrx
 ```javascript
 uhd_usrp_probe
 cd osmo-trx/doc/examples/osmo-trx-uhd
 osmo-trx-uhd -C osmo-trx-usrp_b200.cfg -f
 ```
+## 运行OpenBTS
+```javascript
+cd OpenBTS
+./sipauthserse
+./OpenBTS
+```
+## 运行mobile
+```javascript
+```
+
+
 
 
 
