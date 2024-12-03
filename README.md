@@ -33,6 +33,11 @@ sqlite3 -init OpenBTS/OpenBTS.exmaple.sql /etc/OpenBTS/OpenBTS.db ".quit"
 sqlite3 -init OpenBTS/subscriberRegistry.example.sql /etc/OpenBTS/sipauthserve.db ".quit"
 ```
 ## 配置服务器脚本
+blacklist.json       --      黑名单与imsi上限数量  
+config.json          --      服务器端口配置  
+OpenBTS的端口可以有多个，需要不同的rhost和lhost以应对多设备,mobile端口仅需一个
+
+# 使用
 
 
 
