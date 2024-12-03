@@ -31,6 +31,9 @@ mkdir -p /etc/OpenBTS
 mkdir -p /var/lib/asterisk/sqlite3dir
 sqlite3 -init OpenBTS/OpenBTS.exmaple.sql /etc/OpenBTS/OpenBTS.db ".quit"
 sqlite3 -init OpenBTS/subscriberRegistry.example.sql /etc/OpenBTS/sipauthserve.db ".quit"
+
+mkdir /var/run/OpenBTS
+./bin/OpenBTS #提前创建db文件，防止被sipauthserve创建错误的.db文件
 ```
 ## 配置服务器脚本
 blacklist.json       --      黑名单与imsi上限数量  
