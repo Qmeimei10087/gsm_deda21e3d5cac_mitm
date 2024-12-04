@@ -63,6 +63,7 @@ osmo-trx-uhd -C osmo-trx-usrp_b200.cfg -f
 cd OpenBTS
 ./OpenBTS
 ./sipauthserse
+#OpenBTS必须在sipauthserve之前运行
 ```
 ## 运行mobile
 ```javascript
@@ -74,7 +75,17 @@ cd mobile
 #添加 stick [arfcn]
 ./mobile -c default.cfg
 ```
+# FIXME
+由于OpenBTS与sipauthserve版本不匹配，如果先运行sipauthserve后运行OpenBTS，当设备加入基站就会出现"(mdb) assert failed"的错误,解决办法
+```javascript
+#无需结束sipauthserve进程
+rm -rf /var/lib/asterisk/sqlite3dir/*
+rm -rf /var/run/OpenBTS
+rm -rf /etc/OpenBTS/sipauthserve.db
+mkdir -p /var/run/OpenBTS
 
+./OpenBTS
+```
 
 
 
