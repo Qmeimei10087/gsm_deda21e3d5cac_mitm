@@ -1,0 +1,9 @@
+{
+	"Mobile_Port" : 33221,
+	
+	"OpenBTS":[
+		{"lport":12345,"rport":23456},
+		{"lport":12346,"rport":23457}
+		
+	]
+}
